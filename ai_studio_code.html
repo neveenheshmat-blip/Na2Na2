@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Na2Na2 | Loaded Fries & Waffles Gardenia</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFD700; /* Golden Yellow */
+            --secondary: #D32F2F; /* Deep Red */
+            --dark: #1a1a1a;
+            --light: #fffdf5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light); color: var(--dark); line-height: 1.6; }
+
+        /* Header */
+        header { 
+            background: var(--primary); 
+            padding: 15px; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: var(--secondary); text-transform: uppercase; letter-spacing: -1px; }
+
+        /* Hero */
+        .hero { 
+            background: var(--dark); 
+            color: white; 
+            padding: 40px 20px; 
+            text-align: center; 
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 32px; margin-bottom: 10px; }
+        .hero p { font-size: 16px; opacity: 0.9; margin-bottom: 20px; }
+
+        /* Order Button */
+        .btn-order { 
+            display: inline-block; 
+            background: var(--secondary); 
+            color: white; 
+            padding: 12px 30px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Category Nav */
+        .cat-nav { 
+            display: flex; 
+            overflow-x: auto; 
+            padding: 15px; 
+            background: white; 
+            white-space: nowrap; 
+            gap: 10px; 
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 60px;
+            z-index: 999;
+        }
+        .cat-nav a { 
+            text-decoration: none; 
+            color: var(--dark); 
+            padding: 8px 18px; 
+            background: #f0f0f0; 
+            border-radius: 20px; 
+            font-size: 14px; 
+            font-weight: 600; 
+        }
+
+        /* Menu Section */
+        .section-title { padding: 25px 20px 10px; font-family: 'Montserrat', sans-serif; font-size: 22px; color: var(--secondary); text-transform: uppercase; }
+        
+        .menu-grid { display: grid; grid-template-columns: 1fr; padding: 10px 20px; gap: 20px; }
+        .menu-card { 
+            background: white; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            display: flex; 
+            flex-direction: column;
+        }
+        .menu-img { height: 180px; background: #eee; background-size: cover; background-position: center; }
+        .menu-info { padding: 15px; }
+        .menu-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px; }
+        .menu-name { font-weight: 700; font-size: 17px; }
+        .menu-price { color: var(--secondary); font-weight: 800; font-size: 18px; }
+        .menu-desc { font-size: 13px; color: #666; margin-bottom: 15px; }
+        .add-btn { 
+            display: block; 
+            text-align: center; 
+            border: 2px solid var(--primary); 
+            padding: 8px; 
+            border-radius: 8px; 
+            color: var(--dark); 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: 600; 
+        }
+
+        /* Footer */
+        footer { background: var(--dark); color: white; padding: 40px 20px; text-align: center; margin-top: 40px; }
+        .contact-info { margin-bottom: 20px; font-size: 14px; opacity: 0.8; }
+        .social-link { color: var(--primary); text-decoration: none; font-weight: bold; font-size: 18px; }
+
+        /* Floating WhatsApp Icon */
+        .wa-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Na2Na2 🍟</div>
+    </header>
+
+    <section class="hero">
+        <h1>Craving Satisfied.</h1>
+        <p>Gardenia City's Favorite Loaded Fries & Waffles</p>
+        <a href="https://wa.me/201286460004?text=Hello%20Na2Na2!%20I'd%20like%20to%20order." class="btn-order">ORDER NOW</a>
+    </section>
+
+    <div class="cat-nav">
+        <a href="#fries">🍟 Loaded Fries</a>
+        <a href="#wings">🍗 Wings</a>
+        <a href="#dogs">🌭 Hot Dogs</a>
+        <a href="#sweets">🧇 Sweets</a>
+        <a href="#drinks">🍹 Drinks</a>
+    </div>
+
+    <!-- Loaded Fries Section -->
+    <h2 class="section-title" id="fries">Loaded Legends</h2>
+    <div class="menu-grid">
+        <!-- Item 1 -->
+        <div class="menu-card">
+            <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&q=80&w=500');"></div>
+            <div class="menu-info">
+                <div class="menu-header">
+                    <span class="menu-name">The Buff Pop</span>
+                    <span class="menu-price">175 EGP</span>
+                </div>
+                <p class="menu-desc">Fries or Nachos topped with Buffalo Popcorn Chicken, Smoked Turkey, Pickles, Ranch, and Cheese Sauce.</p>
+                <a href="https://wa.me/201286460004?text=Order:%20The%20Buff%20Pop" class="add-btn">Add to WhatsApp Order</a>
+            </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="menu-card">
+            <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1623238914276-085c531ca80b?auto=format&fit=crop&q=80&w=500');"></div>
+            <div class="menu-info">
+                <div class="menu-header">
+                    <span class="menu-name">The Masri Bite</span>
+                    <span class="menu-price">170 EGP</span>
+                </div>
+                <p class="menu-desc">Fries with Chili Con Carne, Cheese Sauce, Mint, and Sweet Caramelized Onions.</p>
+                <a href="https://wa.me/201286460004?text=Order:%20The%20Masri%20Bite" class="add-btn">Add to WhatsApp Order</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sweet Section -->
+    <h2 class="section-title" id="sweets">Waffle Lovers</h2>
+    <div class="menu-grid">
+        <div class="menu-card">
+            <div class="menu-img" style="background-image: url('https://images.unsplash.com/photo-1581064669013-1678170c2a86?auto=format&fit=crop&q=80&w=500');"></div>
+            <div class="menu-info">
+                <div class="menu-header">
+                    <span class="menu-name">Stuffed Ball Pancake</span>
+                    <span class="menu-price">145 EGP</span>
+                </div>
+                <p class="menu-desc">Fluffy golden pancake balls with a gooey chocolate center. Pick your drip!</p>
+                <a href="https://wa.me/201286460004?text=Order:%20Stuffed%20Ball%20Pancake" class="add-btn">Add to WhatsApp Order</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="contact-info">
+            📍 Gardenia City - Gardenia Mall<br>
+            📞 +201286460004<br>
+            ⏰ Open Daily: 12 PM - 02 AM
+        </div>
+        <a href="#" class="social-link">FOLLOW US ON INSTAGRAM</a>
+        <p style="margin-top:20px; font-size:10px; opacity:0.5;">© 2024 Na2Na2. All rights reserved.</p>
+    </footer>
+
+    <!-- WhatsApp Sticky Icon -->
+    <a href="https://wa.me/201286460004" class="wa-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WhatsApp">
+    </a>
+
+</body>
+</html>
